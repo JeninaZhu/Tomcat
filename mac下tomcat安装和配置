@@ -1,0 +1,28 @@
+官网下载
+将下载包解压拷贝到 /Library目录下,并命名为Tomcat9，其他目录也可。
+打开终端(快捷方式:control+空格，输入'ter')，
+输入以下命令Library/Tomcat9/bin/startup.sh，浏览器中输入localhost:8080，就可以看到首页效果:  
+如果遇到提示No such file or directory或没有权限错误提示，
+需要执行sudo chmod 755 Library/Tomcat9/bin/*.sh，这行代码是给bin文件夹下面所有的后缀为.sh的文件权限 
+然后重新执行startup.sh，如果想停止Tomcat9，直接执行shutdown.sh即可。
+
+每次这样运行比较麻烦，这个时候需要设置环境变量。可以让我们不写路径直接运行
+.bash_profile文件,在这个文件里面写路代码就行让我们不写路径直接写startup.sh就能运行,写shutdown.sh 就能关闭. 
+我们要将/Library/tomcat9/bin/路径按一定规则写入到bash_profile文件中就能不写路径了。
+系统将自动到这个路径下面文件夹中查找startup.sh这个文件
+
+这一步的目标就是将路径写入到.bash_profile文件中,在控制台输入 
+touch ~/.bash_profile; // 将目录跳转到.bash_profile这个文件夹
+open -t ~/.bash_profile //打开.bash_profile文件 
+这时候会弹出一个新的窗口输入 
+export PATH=$PATH:/Library/tomcat9/bin 
+保存 
+这里需要关闭终端 (command+Q)或者重启电脑 
+重写完成后我们就不用写路径直接写sudo startup.sh和sudo shutdown.sh 然后就能直接开启和关闭服务器了
+(sudo表示用管理员运行不然没有权限) 
+
+更新配置的环境变量source .bash_profile
+验证是否成功，终端中输入$PATH
+显示如下-bash: /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/keso/Library/Tomcat8/bin: No such file or directory
+
+
