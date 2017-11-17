@@ -1,0 +1,19 @@
+bin／  二进制可执行文件和脚本
+common/   （ lib文件里面是jar包（包括了servlet-api.jar）;）catalina本身和web应用可加载的类目录
+conf/ 配置文件目录
+logs/ 日志目录
+server/ 服务器所需的类库目录
+shared/ web app共享的类库
+webapps/  web应用所存放的目录applications
+work/ tomcat的工作目录（存放jsp产生的class文件）
+temp/ 存放临时产生的文件
+
+
+tomcat 配置文件//每次改动先复制并改名记录修改时间，防止改错
+1.conf/server.xml 服务器的主配置文件 
+     一般改动两个 1.端口，直接搜索8080，修改port即可。
+                 2.
+2.conf/web.xml  定义所有web应用的配置（缺省的servelet定义和MIME类型定义）
+3.conf/tomcat-user.xml  定义了tomcat用户的信息
+        localhost:8080 显示页面后，左边列表一个 manager，登陆，发现登陆不了，
+        打开tomcat-user.xml ，新建一个manager的角色之后，在账号密码那一行后面的角色里加一个manager
