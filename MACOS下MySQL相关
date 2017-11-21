@@ -1,0 +1,11 @@
+MySQL官网下载 安装
+终端打开，mysql -u root -p 再输入密码，\q退出 \?查询所有快捷输入
+
+
+下载navicat for mysql 图形化工具
+
+mysql官网下载jdbc driver 
+  mysql-connector-java-5.1.44-bin.jar 在项目中使用到jdbc时加入jar包
+  （选中要用的工程，右键——Properties——java build path——Libraries——add external jar(把jar加进去)——Order and Export中选上刚加的jar包。）
+
+eclipse中 data source explorer 和数据库建立连接可以显示出数据库表之类的信息
